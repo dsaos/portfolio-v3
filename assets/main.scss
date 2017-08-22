@@ -3,3 +3,19 @@
 ---
 
 @import "bootstrap";
+@import "_animations";
+
+//additional resets
+@for $i from 1 through 6 {
+  h#{$i} a {
+    color:inherit;
+  }
+}
+
+.post-meta {
+	@extend .alert;
+	@extend .alert-light;
+	background-color:$gray-100;
+	border-color:$gray-200;
+}
+

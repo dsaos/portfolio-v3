@@ -2,22 +2,27 @@
 layout: default
 ---
 
-<div class="home">
+<div class="home container">
 
-  <h1 class="page-heading">Posts</h1>
+  <h1 class="page-heading display-1">Posts</h1>
   
   {{ content }}
 
-  <ul class="post-list">
     {% for post in site.posts %}
-      <li>
-        {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
+      <a class="post-link card-link" href="{{ post.url | relative_url }}">
+        <div class="card post-card">
+          <div class="card-body">
+            <h2 class="card-title post-title">{{ post.title | escape }}</h2>
+            <p>{{ post.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}</p>
+          </div>
 
-        <h2>
-          <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-        </h2>
-      </li>
+          {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+          <div class="card-footer">
+            <small><span class="date">{{ post.date | date: date_format }}</span></small>
+          </div>
+
+        </div>
+      </a>
     {% endfor %}
   </ul>
 

@@ -1,0 +1,17 @@
+a.card-link {
+	color:inherit;
+	.card {
+		transition: all .3s ease-out;
+		transform-origin:center;
+	}
+	&:hover {
+		.card {
+			transform:scale(1.02, 1.02);
+		}
+	}
+	&:active {
+		.card {
+			transform:scale(0.95, 0.95);
+		}
+	}
+}
