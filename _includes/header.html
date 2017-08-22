@@ -5,6 +5,8 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarToggler">
+      {% assign default_paths = site.pages | map: "path" %}
+      {% assign page_paths = site.header_pages | default: default_paths %}
       {% if page_paths %}
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
           {% for path in page_paths %}

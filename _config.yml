@@ -24,6 +24,11 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: daSprankle
 github_username:  dsaos
 
+# Hard-coded navigation. If you comment these out, minima will look for all pages with
+# a specified permalink front matter.
+header_pages:
+    - about.md
+
 # Build settings
 markdown: kramdown
 highlighter: rouge

@@ -12,6 +12,15 @@
   }
 }
 
+//just apply .img-fluid to all images.
+img {
+	@extend .img-fluid;
+}
+
+.post-content img {
+	@extend .img-thumbnail;
+}
+
 .post-meta {
 	@extend .alert;
 	@extend .alert-light;
