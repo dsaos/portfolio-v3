@@ -27,7 +27,15 @@ github_username:  dsaos
 # Hard-coded navigation. If you comment these out, minima will look for all pages with
 # a specified permalink front matter.
 header_pages:
+    - blog.md
     - about.md
+
+permalink: /blog/:year/:path/
+
+collections:
+    items:
+        output: true
+        permalink: /work/:path/
 
 # Build settings
 markdown: kramdown

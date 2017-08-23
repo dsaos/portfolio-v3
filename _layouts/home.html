@@ -7,37 +7,38 @@ layout: default
   {{ content }}
 
     <div class="card-deck">
-    {% for post in site.posts %}
+    {% for item in site.items %}
 
-      {% if post.layout == "post" %}
-        <a class="post-link card-link card post-card layout-{{ post.layout }}" href="{{ post.url | relative_url }}">
+      {% if item.layout == "post" %}
+        <a class="post-link card-link card post-card layout-{{ item.layout }}" href="{{ item.url | relative_url }}">
             <div class="card-body">
-              <h2 class="card-title post-title">{{ post.title | escape }}</h2>
-              <p>{{ post.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}</p>
+              <h2 class="card-title post-title">{{ item.title | escape }}</h2>
+              <p>{{ item.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}</p>
             </div>
             <div class="card-footer">
-              <small><span class="date">{{ post.date | date: date_format }}</span></small>
+              <small><span class="date">{{ item.date | date: date_format }}</span></small>
             </div>
         </a>
 
-      {% elsif post.layout == "quote" %}
-        <a class="post-link card-link card post-card layout-{{ post.layout }}" href="{{ post.url | relative_url }}">
+      {% elsif item.layout == "quote" %}
+        <a class="post-link card-link card post-card layout-{{ item.layout }}" href="{{ item.url | relative_url }}">
             <div class="card-body lead">
-              {{post.content}}
+              {{item.content}}
             </div>
             <div class="card-footer">
-              <small><span class="date">{{ post.date | date: date_format }}</span></small>
+              <small><span class="date">{{ item.date | date: date_format }}</span></small>
             </div>
         </a>
 
-      {% elsif post.layout == "image" %}
-        <a class="post-link card-link card post-card layout-{{ post.layout }}" href="{{ post.url | relative_url }}">
+
+      {% elsif item.layout == "image" %}
+        <a class="post-link card-link card post-card layout-{{ item.layout }}" href="{{ item.url | relative_url }}">
             <div class="card-header">
-              {{ post.title | escape }}
+              {{ item.title | escape }}
             </div>
-            <img class="img-fluid" src="{{post.thumbnail}}">
+            <img class="img-fluid" src="{{item.thumbnail}}">
             <div class="card-footer">
-              <small><span class="date">{{ post.date | date: date_format }}</span></small>
+              <small><span class="date">{{ item.date | date: date_format }}</span></small>
             </div>
         </a>
 
