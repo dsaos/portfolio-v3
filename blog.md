@@ -4,5 +4,5 @@
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: blog
 title: Blog
-permalink: blog/index.html
+permalink: blog/
 ---
