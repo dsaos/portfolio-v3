@@ -6,44 +6,36 @@ layout: default
   
   {{ content }}
 
-    <div class="card-deck">
-    {% for post in site.posts %}
+  <div class="card-deck">
+  {% for post in site.posts %}
 
-      {% if post.layout == "post" %}
-        <a class="post-link card-link card post-card layout-{{ post.layout }}" href="{{ post.url | relative_url }}">
-            <div class="card-body">
-              <h2 class="card-title post-title">{{ post.title | escape }}</h2>
-              <p>{{ post.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}</p>
-            </div>
-            <div class="card-footer">
-              <small><span class="date">{{ post.date | date: date_format }}</span></small>
-            </div>
-        </a>
-
-      {% elsif post.layout == "quote" %}
-        <a class="post-link card-link card post-card layout-{{ post.layout }}" href="{{ post.url | relative_url }}">
-            <div class="card-body lead">
-              {{post.content}}
-            </div>
-            <div class="card-footer">
-              <small><span class="date">{{ post.date | date: date_format }}</span></small>
-            </div>
-        </a>
-
-      {% elsif post.layout == "image" %}
-        <a class="post-link card-link card post-card layout-{{ post.layout }}" href="{{ post.url | relative_url }}">
-            <div class="card-header">
-              {{ post.title | escape }}
-            </div>
-            <img class="img-fluid" src="{{post.thumbnail}}">
-            <div class="card-footer">
-              <small><span class="date">{{ post.date | date: date_format }}</span></small>
-            </div>
-        </a>
-
+    <a class="post-link card-link card post-card layout-{{ post.layout }}" href="{{ post.url | relative_url }}">
+      {% if post.title and post.layout == "image" %}
+        <div class="card-header">
+          {{ post.title | escape }}
+        </div>
       {% endif %}
-    {% endfor %}
-    </div>
+      {% case post.layout %}
+        {% when "post" %}
+          <div class="card-body">
+            {% if post.title %}
+              <h2 class="card-title post-title">{{ post.title | escape }}</h2>
+            {% endif %}
+            <p>{{ post.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}</p>
+          </div>
+        {% when "image" %}
+            <img class="img-fluid" src="{{post.thumbnail }}">
+        {% when "quote" %}
+          <div class="card-body lead">
+            {{post.content}}
+          </div>
+      {% endcase %}
+      <div class="card-footer">
+        <small><span class="date">{{ post.date | date: date_format }}</span></small>
+      </div>
+    </a>
+  {% endfor %}
+  </div>
   <p class="rss-subscribe mt-5">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
 
 </div>
