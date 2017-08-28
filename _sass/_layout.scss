@@ -1,0 +1,12 @@
+.sp-sidebar {
+	position:fixed;
+	z-index:1000;
+
+}
+
+.sp-content {
+	background:$gray-900;
+	aside {
+		color:$gray-300;
+	}
+}
