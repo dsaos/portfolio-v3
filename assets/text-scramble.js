@@ -65,14 +65,32 @@ class TextScramble {
   }
 }
 
+  
+function delay(interval) {
+  return new Promise(function(resolve) {
+      setTimeout(resolve, interval);
+  });
+}
+
+
+
+const els = document.getElementsByClassName('scramble-in')
+for (el of els) {
+el.style.visibility = "hidden"
+}
+
 // ——————————————————————————————————————————————————
 // Example
 // ——————————————————————————————————————————————————
 
-document.addEventListener("DOMContentLoaded", function(event) {
-  const els = document.getElementsByClassName('scramble-in')
-  for (el of els) {
-    let fx = new TextScramble(el)
-    fx.setText(el.innerText)
-  }
-})
+window.onload = function(event) {
+
+
+  delay(1000).then(function() {
+    for (el of els) {
+        let fx = new TextScramble(el)
+        el.style.visibility = "visible"
+        fx.setText(el.innerText)  
+    }
+  })
+}
