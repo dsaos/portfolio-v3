@@ -44,12 +44,7 @@
 	flex-direction:column;
 	justify-content:center;
 	background-color: #342875;
-  	background-image:
-		linear-gradient(
-			to bottom, 
-			#15102e 0%, 
-			#0b0817 100%
-		);
+	background-image: linear-gradient(to top, rgb(2, 6, 23), rgb(32, 3, 56));
 
     transition: background-image .4s cubic-bezier(0.63,1, 0.3, 1);
 	h1.masthead-title {
@@ -80,15 +75,15 @@
 
 	color:#fff;
 	&-title {
-		background-image: url("https://www.dropbox.com/s/ac9efh6oqu3docb/stars.png?raw=1");
+		background-image: url('/assets/stars.png');
 	    background-repeat: repeat;
 	    background-size: 400px auto;
 	    -webkit-text-fill-color: transparent;
 	    text-fill-color: transparent;
 	    -webkit-background-clip: text;
 	    background-clip: text;
-	    -webkit-animation: stars 3s infinite linear;
-	    animation: stars 3s infinite linear;
+	    -webkit-animation: stars 5s infinite linear;
+	    animation: stars 5s infinite linear;
 	    transition: background-image .4s cubic-bezier(0.63,1,0.3,1);
 	}
 	.dud {
@@ -98,4 +93,34 @@
 
 article, .full-height {
 	min-height:100vh;
+}
+
+.thumbnail-container {
+	display:flex;
+	flex-direction:row;
+	flex-wrap:wrap;
+	justify-content:space-evenly;
+}
+
+.portfolio-thumbnail {
+	display:flex;
+	position:relative;
+	overflow:hidden;
+	img {
+		object-fit:cover;
+		min-width:100%;
+		min-height:100%;
+	}
+	width:100vw;
+	height:67vw;
+	@include media-breakpoint-up(sm) {
+		width:50%;
+		height:32vw;
+
+	}
+	@include media-breakpoint-up(md) {
+		width:33.33%;
+		height:21vw;
+	}
+
 }

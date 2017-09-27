@@ -44,3 +44,30 @@ a.card-link {
 		opacity:1;
   	}
 }
+
+
+
+/* vars */
+$main: #e0c764;
+$secondary: darken($main, 20);
+$r: 15;
+$d: $r * 2;
+$t: 2000;
+
+.preloader {
+	min-width:0 !important;
+	min-height:0 !important;
+	margin:auto;
+	width:50px;
+	height:50px;
+	border: 8px solid #000;
+	border-right-color:transparent;
+	border-radius:50%;
+	animation:spin 3s infinite linear;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

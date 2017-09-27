@@ -22,7 +22,7 @@ layout: default
   </svg>-->
 </header>
 <div class="home container-fluid">
-  <div class="row  justify-content-center align-items-center sp-content py-3 full-height">
+  <div class="row  justify-content-center align-items-center sp-content py-3 full-height" style="background-image: linear-gradient(-225deg, #B7F8DB 0%, #50A7C2 100%);">
     <div class="col-12 col-sm-7 ">    
       <h2 class="display-1 text-white text-right fade-up mb-0">Design is proactive problem solving</h2>
     </div>
@@ -33,7 +33,7 @@ layout: default
   <div class="row flex-xl-nowrap">
     <div class="col-12 col-md-12 col-xl-12 sp-content">
 
-      {% for item in site.items %}
+      {% for item in site.posts %}
         <article class="row align-items-center justify-content-center py-3 bg-success">
           <aside class="col-12 mb-1 col-md-7 align-self-center item-description fade-up">
             <h2 class="display-3">{{item.title | escape}}</h2>
@@ -46,8 +46,28 @@ layout: default
       {% endfor %}
     </div>
   </div>
+  <div class="row flex-xl-nowrap">
+    <div class="col-12 col-md-12 col-xl-12 sp-content">
+      <article class="row align-items-center justify-content-center py-3 bg-info">
+        <aside class="col-12 mb-1 col-md-7 align-self-center item-description fade-up">
+          <h2 class="display-3">Design Work</h2>
+          <p class="mb-0">As a visual designer, I have a broad range of focuses. Here is some of my design work.</p>
+        </aside>
+        <div class="col-12 col-md-7 item-content fade-up">
+        </div>
+      </article>
+    </div>
+  </div>
 </div>
 
+
+          <div class="thumbnail-container">
+            {% for item in site.items %}
+            <a class="portfolio-thumbnail thumbnail-link expand-link">
+              <img class="portfolio-image lazyload-image preloader" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="{{item.thumbnail}}">
+            </a>
+            {% endfor %}
+          </div>
   
   {{ content }}
 
