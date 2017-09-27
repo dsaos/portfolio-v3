@@ -65,13 +65,6 @@ class TextScramble {
   }
 }
 
-  
-function delay(interval) {
-  return new Promise(function(resolve) {
-      setTimeout(resolve, interval);
-  });
-}
-
 
 
 const els = document.getElementsByClassName('scramble-in')
@@ -85,12 +78,4 @@ el.style.visibility = "hidden"
 
 window.onload = function(event) {
 
-
-  delay(1000).then(function() {
-    for (el of els) {
-        let fx = new TextScramble(el)
-        el.style.visibility = "visible"
-        fx.setText(el.innerText)  
-    }
-  })
 }

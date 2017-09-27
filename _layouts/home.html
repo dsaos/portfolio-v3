@@ -40,7 +40,7 @@ layout: default
             <p class="mb-0">{{item.content}}</p>
           </aside>
           <div class="col-12 col-md-7 item-content fade-up">
-            <img class="img-fluid" src="{{item.thumbnail }}">
+            <img class="img-fluid lazyload-image preloader" data-src="{{item.thumbnail }}">
           </div>
         </article>
       {% endfor %}
