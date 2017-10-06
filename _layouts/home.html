@@ -5,71 +5,62 @@ layout: default
 <header id="masthead" class="masthead">
   <h1 class="masthead-title scramble-in display-1">David Sprankle</h1>
   <h3 class="scramble-in">designer, developer, logician</h3>
-  <!--<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-    width="299px" height="289px" viewBox="0 0 299 289" enable-background="new 0 0 299 289" xml:space="preserve">
-      <path fill="url(#skyGradient)" d="M293.468,275.282c0,1.617-1.311,2.928-2.928,2.928H8.46c-1.617,0-2.928-1.311-2.928-2.928V13.718c0-1.617,1.311-2.928,2.928-2.928h282.08c1.617,0,2.928,1.311,2.928,2.928V275.282z"/>
-      <defs>
-        <linearGradient id="skyGradient" x1="100%" y1="100%">
-          <stop offset="0%" stop-color="lightblue" stop-opacity=".5">
-            <animate attributeName="stop-color" values="lightblue;blue;red;red;black;red;red;purple;lightblue" dur="14s" repeatCount="indefinite" />
-          </stop>
-          <stop offset="100%" stop-color="lightblue" stop-opacity=".5">
-            <animate attributeName="stop-color" values="lightblue;orange;purple;purple;black;purple;purple;blue;lightblue" dur="14s" repeatCount="indefinite" />
-            <animate attributeName="offset" values=".95;.80;.60;.40;.20;0;.20;.40;.60;.80;.95" dur="14s" repeatCount="indefinite" />    
-          </stop>
-        </linearGradient>
-      </defs>
-  </svg>-->
 </header>
-<div class="home container-fluid">
-  <div class="row  justify-content-center align-items-center sp-content py-3 full-height" style="background-image: linear-gradient(-225deg, #B7F8DB 0%, #50A7C2 100%);">
-    <div class="col-12 col-sm-7 ">    
-      <h2 class="display-1 text-white text-right fade-up mb-0">Design is proactive problem solving</h2>
+<div class="container-fluid">
+  <div class="row  justify-content-center align-items-start sp-content py-3" style="background-image: linear-gradient(-225deg, #B7F8DB 0%, #50A7C2 100%);">
+    <div class="col-12 col-md-7 mb-md-0 mb-1">    
+      <h2 class="display-1 tagline text-white text-right fade-up mb-0">Design is proactive problem solving</h2>
     </div>
-    <div class="col-12 col-sm-5">
-    <p class="lead text-left text-white fade-up mb-0">With a decade of experience in both agency and in-house environments, and with a long-standing foundation in technical support, I've built a passion for functional art, beautiful code, and plain ol' common sense. Let me show you below. </p>
+    <div class="col-12 col-md-5">
+      <p class="lead text-left text-white fade-up mb-0">With a decade of experience in both agency and in-house environments, and with a long-standing foundation in technical support, I've built a passion for functional art, beautiful code, and plain ol' common sense. Let me show you below. </p>
     </div>
   </div>
+</div>
+<div class="container-fluid">
   <div class="row flex-xl-nowrap">
-    <div class="col-12 col-md-12 col-xl-12 sp-content">
+    <div class="col-12 col-md-12 col-xl-12 sp-content" style="background-image: linear-gradient(-60deg, #16a085 0%, #f4d03f 100%);">
 
       {% for item in site.posts %}
-        <article class="row align-items-center justify-content-center py-3 bg-success">
-          <aside class="col-12 mb-1 col-md-7 align-self-center item-description fade-up">
+        <article class="row align-items-center justify-content-center py-3">
+          <aside class="col-12 mb-1 col-md-7 align-self-center item-description fade-up text-white">
             <h2 class="display-3">{{item.title | escape}}</h2>
             <p class="mb-0">{{item.content}}</p>
           </aside>
           <div class="col-12 col-md-7 item-content fade-up">
-            <img class="img-fluid lazyload-image preloader" data-src="{{item.thumbnail }}">
+            <img class="img-fluid lazyload-image preloader"  alt="{{item.title}}" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="{{item.thumbnail }}">
           </div>
         </article>
       {% endfor %}
     </div>
   </div>
-  <div class="row flex-xl-nowrap">
-    <div class="col-12 col-md-12 col-xl-12 sp-content">
-      <article class="row align-items-center justify-content-center py-3 bg-info">
-        <aside class="col-12 mb-1 col-md-7 align-self-center item-description fade-up">
-          <h2 class="display-3">Design Work</h2>
-          <p class="mb-0">As a visual designer, I have a broad range of focuses. Here is some of my design work.</p>
-        </aside>
-        <div class="col-12 col-md-7 item-content fade-up">
+</div>
+<div  class="sp-content text-white" style="background-image: linear-gradient(to right, #f9d423 0%, #ff4e50 100%);">
+  <aside class="py-2 px-1 text-white">
+    <h2 class="display-3">Design Work</h2>
+    <p class="mb-0">As a visual designer, I have a broad range of focuses. Here is some of my design work.</p>
+  </aside>
+  <div class="thumbnail-container" style="background-image: linear-gradient(to right, #f9d423 0%, #ff4e50 100%);">
+    {% for item in site.items %}
+    <a class="portfolio-thumbnail thumbnail-link expand-link fade-up">
+      <div class="portfolio-item">
+        <img class="portfolio-image lazyload-image preloader" alt="{{item.title}}" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="{{item.thumbnail}}">
+        <div class="portfolio-description">
+          <h3 class="mb-0">{{item.title}}</h3>
+          <p class="lead">{{item.content}}</p>
         </div>
-      </article>
-    </div>
+      </div>
+    </a>
+    {% endfor %}
   </div>
 </div>
 
 
-          <div class="thumbnail-container">
-            {% for item in site.items %}
-            <a class="portfolio-thumbnail thumbnail-link expand-link">
-              <img class="portfolio-image lazyload-image preloader" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="{{item.thumbnail}}">
-            </a>
-            {% endfor %}
-          </div>
-  
-  {{ content }}
+
+</div>
+<div class="work-fullscreen" id="fullscreenArea">
+  <div id="fullscreenImage" class="fullscreen-image"></div>
+  <aside id="fullscreenDescription" class="fullscreen-description"></aside>
+</div>
 
   
   <p class="rss-subscribe mt-5">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>

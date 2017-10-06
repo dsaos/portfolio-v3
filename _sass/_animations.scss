@@ -19,7 +19,6 @@ a.card-link {
   will-change: transform, opacity;
   transition-property: opacity, transform;
   transition-duration: 1.5s;
-  transition-delay:0.3s;
   transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
   &.animate {
     transform: translateY(0);
@@ -71,3 +70,47 @@ $t: 2000;
     transform: rotate(360deg);
   }
 }
+
+
+#fullscreenArea {
+	height:0;
+	visibility:hidden;
+	background:rgba(0,0,0,0);
+	will-change: background;
+	transition-property: background;
+	transition-duration: 1.5s;
+	transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+	.fullscreen-image { 
+		will-change: transform;
+		transition-property: transform;
+		transition-duration: 2s;
+		transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+		transform:translateY(-80vh);
+	}
+	.fullscreen-description {
+		will-change: transform;
+		transition-property: transform;
+		transition-duration: 1s;
+		transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+		transform:translateY(20vh);
+	}
+
+}
+
+
+
+#fullscreenArea.animate-in {
+	height:100vh;
+	visibility:visible;
+	background:rgba(0,0,0,0.8);
+	display:block;
+	opacity:1;
+	.fullscreen-image {
+		transition-delay: 0;
+		transform: translateY(0vh);
+	}
+	.fullscreen-description {
+		transform:translateY(0vh);
+	}
+}
+

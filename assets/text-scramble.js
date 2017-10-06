@@ -73,9 +73,18 @@ el.style.visibility = "hidden"
 }
 
 // ——————————————————————————————————————————————————
-// Example
+// defer loading until onload in animations.js
 // ——————————————————————————————————————————————————
 
-window.onload = function(event) {
 
+
+
+
+
+
+  
+function delay(interval) {
+  return new Promise(function(resolve) {
+      setTimeout(resolve, interval);
+  });
 }
