@@ -1,13 +1,8 @@
-# Bootstrap 4.0.0-beta Portfolio
-A portfolio theme built on Jekyll and Bootstrap 4.0.0-beta, designed to leverage media-focused content with a separate section for a blog and static pages using [Jekyll Front Matter](https://jekyllrb.com/docs/frontmatter/) and heavy use of [Bootstrap's new Card components](https://getbootstrap.com/docs/4.0/components/card/).
+# David Sprankle's Portfolio
+Source code for my portfolio, soon to be available at [sprankledesign.com](http://www.sprankledesign.com). This was based off of another Jekyll project of mine, [Bootstrap 4.0.0-beta portfolio](https://github.com/dsaos/jekyll-bootstrap-portfolio), which is functionally a boilerplate Jekyll template built to leverage up-to-date Bootstrap components such as [cards](https://getbootstrap.com/docs/4.0/components/card/).
 
-## Dependencies
-1) [Ruby](https://www.ruby-lang.org/en/downloads/)
-2) Bundler (`gem install bundler` from command line once Ruby is installed)
+## Developer Details
+The focus of this portfolio--as with many of my projects--was to learn new technologies. To that end, this site was my first practical application of Jekyll, used to serve portfolio "items" by category. On the front-end, I eschewed Javascript frameworks in favor of ES6 functionality and CSS3 animations/transitions. The site itself does not include any jQuery, and has been packed to optimize its network load. Indeed, the only framework included is ScrollMagic to provide support for deferred image loading and animation.
 
-*For more details, you can check out the [GitHub Pages guide](https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/).*
+This also marked the first project with a focus on thorough auditing through Google Chrome's developer tools. The site now scores at 56 for a progressive web app (not a focus of this portfolio), 97 for accessibility (low contrast due to my own aesthetic decisions), and 90 on performance due to a lack of included libraries and "lazyloading" of images. 
 
-## Installation & Usage
-Clone/fork, and after installing dependencies, use command line to navigate to root folder and enter `bundle install`. Then, use [Jekyll's built-in fuctions](https://jekyllrb.com/docs/usage/) like `jekyll serve`  and modify to your heart's content.
-
-Once complete, run `jekyll build` for deploying into the `_site` directory, which is what you should upload to a web server.
