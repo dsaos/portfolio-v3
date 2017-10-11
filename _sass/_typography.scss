@@ -9,29 +9,18 @@
 	}
 }
 
-.text-right {
-	text-align:left !important;
-	@include media-breakpoint-up(md) {
-		text-align:right !important;
-	}
-
-}
 
 .display-1 {
 	font-family:$font-family-base;
 	text-transform:uppercase;
 	letter-spacing:4px;
-	font-size:3rem;
+	font-size:2rem;
 	@include media-breakpoint-up(sm) {
-		font-size:3.5rem;
+		font-size:3rem;
 	}
 
 	@include media-breakpoint-up(md) {
 		font-size:4rem;
-	}
-
-	@include media-breakpoint-up(lg) {
-		font-size:6rem;
 	}
 }
 
@@ -48,4 +37,8 @@
 	@include media-breakpoint-up(lg) {
 		font-size:2rem;
 	}
+}
+
+.text-pink {
+	color:#511b54;
 }

@@ -21,27 +21,27 @@ a.card-link {
   transition-duration: 1.5s;
   transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
   &.animate {
-    transform: translateY(0);
-    opacity: 1;
+	transform: translateY(0);
+	opacity: 1;
   }
 }
 
 @keyframes stars {
-  0% { background-position: 0 -400px; }
-  100% { background-position: 0 0; }
+	0% { background-position: 0 -400px; }
+	100% { background-position: 0 0; }
 }
 
 
 @keyframes fade-up {
-  	0% {
+	0% {
 		position:relative;
 		top:100px;
 		opacity:0;
 	}
-  	100% { 
+	100% { 
 		top:0;
 		opacity:1;
-  	}
+	}
 }
 
 
@@ -66,9 +66,9 @@ $t: 2000;
 }
 
 @keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
+	to {
+		transform: rotate(360deg);
+	}
 }
 
 
@@ -114,3 +114,47 @@ $t: 2000;
 	}
 }
 
+
+svg.maze {
+	width:512px;
+}
+.maze g path, .maze g line {
+	stroke-dasharray: 400;
+	stroke-dashoffset: 400;
+	stroke-width:1px;
+	stroke:#7c3980;
+}
+.maze g.concentric-lines path:last-child {
+	stroke-dasharray: 0;
+	stroke-dashoffset: 0;
+}
+
+.maze.animate g path:nth-child(even), .maze.animate g line:nth-child(even) {
+	animation-delay: 6s;
+}
+
+.maze.animate g path:nth-child(4n+0) {
+	animation-delay: 8s;
+}
+
+.maze.animate g path, .maze.animate g line {
+	animation: dash 40s forwards;
+	animation-delay:4s;
+		animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.maze.animate .maze-solution {
+	stroke-width:2px;
+	stroke: #8e92ff;
+	stroke-dasharray: 2150;
+	stroke-dashoffset: 2150;
+	animation: dash 4s forwards;
+	animation-delay: 2s;
+	animation-timing-function: cubic-bezier(0.195, 0.010, 0.940, 1.030);
+
+}
+
+@keyframes dash {
+  to {
+	stroke-dashoffset: 0;
+  }
+}

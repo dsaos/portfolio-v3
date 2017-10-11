@@ -2,7 +2,7 @@
 layout: post
 date:   2017-09-19 12:45:51 -0700
 thumbnail: /assets/cpr.png
-title: Digital Platforms @ CPR
+title: "Case Study: Digital Platforms @ CPR"
 excerpt: Work for a National Public Radio member station.
 category: Web
 ---
