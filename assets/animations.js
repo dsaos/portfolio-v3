@@ -2,7 +2,14 @@ var controller = new ScrollMagic.Controller();
 
 var numAnimating = 0;
 
-let fadeEls = document.getElementsByClassName('fade-up')
+//slide elements need to be wrapped to work properly
+let slideEls = document.getElementsByClassName('slide-in')
+for (slideEl of slideEls) {
+	slideEl.innerHTML = "<span>" + slideEl.innerHTML + "</span>";	
+}
+
+
+let fadeEls = document.querySelectorAll('.fade-up, .slide-in')
 for (fadeEl of fadeEls) {
 	let scene = new ScrollMagic.Scene({
 		triggerElement: fadeEl,

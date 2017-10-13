@@ -24,19 +24,6 @@
 	}
 }
 
-.sp-sidebar {
-	position:fixed;
-	z-index:1000;
-
-}
-
-.sp-content {
-	background:$gray-900;
-	aside {
-		color:$gray-300;
-	}
-}
-
 .masthead {
 	padding:2rem;
 	height:100vh;
@@ -161,6 +148,7 @@ article, .full-height {
 		text-align:center;
 		img {
 			max-height:100%;
+			margin:auto;
 		}
 	}
 	.fullscreen-description {
@@ -185,3 +173,31 @@ article, .full-height {
 	}
 }
 
+.bg-gradient-blue {
+	color:#72b7ff;
+	hr {border-color:currentColor;}
+	background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);
+}
+
+.bg-gradient-pink {
+	color:#511b54;
+	hr {border-color:currentColor;}
+	background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.bg-gradient-dark {
+	color:#425373;
+	hr {border-color:currentColor;}
+	background-image:linear-gradient(135deg, #03040c 0%, #283454 100%);
+
+}
+
+hr {
+	margin-left:0;
+	width:10%;
+}
+
+.text-center hr {
+	margin-left:auto;
+	text-align:center;
+}
