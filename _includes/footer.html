@@ -1,38 +1,40 @@
-<footer class="site-footer mt-6 py-3 text-muted bg-light">
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        <ul class="contact-list mb-0 list-group">
-          <li class="list-group-item">
-            {% if site.author %}
-              {{ site.author | escape }}
-            {% else %}
-              {{ site.title | escape }}
-            {% endif %}
-            </li>
-            {% if site.email %}
-            <li class="list-group-item"><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-            {% endif %}
-        </ul>
-      </div>
-      <div class="col">
-        <ul class="social-media-list mb-0 list-group">
+<footer class="site-footer mt-6 py-3 bg-gradient-dark">
+  <div class="container-fluid">
+    <div class="row justify-content-evenly">
+      <div class="col-12 col-md-4 col-xl-3 mb-2 mb-md-0">
+        <h3 class="mb-1">Get in touch.</h3>
+        <p class="mb-1">Now that you've reached the bottom, <strong>let's collaborate</strong>. You can get in touch with me using the links below or <a href="/assets/DavidSprankle-Resume.pdf" target="_blank">download a PDF</a> of my resume for your records.</h3>
+        <ul class="list-unstyled mb-0">
+          {% if site.email %}
+          <li >
+            <a href="mailto:{{ site.email }}?subject=Found You on Your Website"><span class="icon icon--email">{% include icon-email.svg %}</span> {{ site.email }}</a>
+          </li>
+          {% endif %}
           {% if site.github_username %}
-          <li class="list-group-item">
+          <li >
             {% include icon-github.html username=site.github_username %}
           </li>
           {% endif %}
 
           {% if site.twitter_username %}
-          <li class="list-group-item">
+          <li >
             {% include icon-twitter.html username=site.twitter_username %}
           </li>
           {% endif %}
         </ul>
       </div>
-      <div class="col">
-        <p class="mb-0">{{ site.description | escape }}</p>
+      <div class="col-12 col-md-4 col-xl-3">
+        <h3 class="mb-1">Thanks!</h3>
+        <p>This site was built by hand in <a href="https://www.sublimetext.com/3" target="_blank">Sublime Text 3</a>, with the only libraries used being <a href="http://www.getbootstrap.com" target="_blank">Bootstrap</a> (CSS only) and <a href="http://www.scrollmagic.io" target="_blank">ScrollMagic</a>. Special thanks to:</p>
+        <ul class="list-unstyled mb-0">
+          <li ><a href="https://useiconic.com/" target="_blank">Iconic</a></li>
+          <li ><a href="http://www.mazegenerator.net/" target="_blank">Maze Generator</a></li>
+          <li ><a href="https://useiconic.com/" target="_blank">Google Fonts</a></li>
+          <li ><a href="https://codepen.io/soulwire/" target="_blank">Justin Windle</a> for text scramble inspiration</li>
+        </ul>
       </div>
     </div>
+    <div class="text-center mt-3">
+    <hr><a href="http://old.sprankledesign.com"><small>...go back in time?</small></a></div>
   </div>
 </footer>

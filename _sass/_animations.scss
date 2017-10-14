@@ -54,15 +54,19 @@ $d: $r * 2;
 $t: 2000;
 
 .preloader {
-	min-width:0 !important;
-	min-height:0 !important;
-	margin:auto;
-	width:50px;
-	height:50px;
-	border: 8px solid #000;
-	border-right-color:transparent;
-	border-radius:50%;
-	animation:spin 3s infinite linear;
+		content:'';
+		min-width:0 !important;
+		min-height:0 !important;
+		margin:auto;
+		width:50px !important;
+		height:50px !important;
+		max-width:50px !important;
+		max-height:50px !important;
+		border: 8px solid #000;
+		border-right-color:transparent;
+		border-radius:50%;
+		animation:spin 3s infinite linear;
+		display:inline-block;
 }
 
 @keyframes spin {
@@ -165,7 +169,7 @@ overflow:hidden;
 display:inline-block;
 	span {
 		display:block;
-		transition-property:all;
+		transition-property:transform;
 		transition-duration:2s;
 		transition-timing-function: ease-in-out;
 		transform:translateX(-100%);
