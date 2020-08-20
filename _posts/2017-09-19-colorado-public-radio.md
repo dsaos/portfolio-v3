@@ -7,7 +7,7 @@ excerpt: Work for a National Public Radio member station.
 category: Web
 ---
 
-For the past five years, I have managed the web presence for Colorado Public Radio, a public radio organization with stations for news, classical, and alternative music. 
+From 2013 through 2017, I managed the web presence for Colorado Public Radio, a public radio organization with stations for news, classical, and alternative music.
 
 As a web developer, I worked to improve [CPR's central website](http://www.cpr.org/) for both internal staff and the organization's audience. Built on Drupal 7 and boasting a complex asynchronous template system, the site focuses largely on persistent streaming of audio. We developed forward-thinking tools that made it simple for editors to upload produced audio, and for visitors to engage with stories.
 
