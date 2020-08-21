@@ -21,16 +21,31 @@ layout: default
     <div class="col-12 col-md-12 col-xl-12 sp-content">
 
       {% for item in site.posts %}
-        <article class="row align-items-center justify-content-evenly">
-          <aside class="col-12 mb-1 col-md-6 col-lg-5 col-xl-4 align-self-center item-description fade-up mb-0">
-            <h6 class="display-1 tagline slide-in mb-1">{{item.title}}</h6>
-            <hr>
-            <p class="mt-1 mb-0">{{item.content}}</p>
-          </aside>
-          <div class="col-12 col-md-5 item-content fade-up mb-0">
-            <img class="img-fluid lazyload-image preloader"  alt="{{item.title}}" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="{{item.thumbnail }}">
-          </div>
-        </article>
+        {% if item.useLayout == 'full' %}
+        <div class="row justify-content-evenly">
+          <article class="col-12 col-md-10 fade-up">
+            <div class="text-center">
+              <h6 class="display-1 tagline slide-in mb-1">{{item.title}}</h6>
+              <hr>
+            </div>
+            <div class="mt-1 mb-0">
+              {{item.content}}
+            </div>
+          </article>
+        </div>
+        <hr class="my-3 mx-auto">
+        {% else %}
+          <article class="row align-items-center justify-content-evenly">
+            <aside class="col-12 mb-1 col-md-6 col-lg-5 col-xl-4 align-self-center item-description fade-up mb-0">
+              <h6 class="display-1 tagline slide-in mb-1">{{item.title}}</h6>
+              <hr>
+              <p class="mt-1 mb-0">{{item.content}}</p>
+            </aside>
+            <div class="col-12 col-md-5 item-content fade-up mb-0">
+              <img class="img-fluid lazyload-image preloader"  alt="{{item.title}}" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="{{item.thumbnail }}">
+            </div>
+          </article>
+        {% endif %}
       {% endfor %}
     </div>
   </div>
@@ -113,7 +128,7 @@ layout: default
       <li class="fade-up">Logic Pro</li>
       <li class="fade-up">Aperture</li>
       <li class="fade-up">Mainstage</li>
-      <li class="fade-up">Sublime Text</li>
+      <li class="fade-up">VS Code</li>
       <li class="fade-up">Unity</li>
       <li class="fade-up">Unreal Engine</li>
       <li class="fade-up">Blender</li>
