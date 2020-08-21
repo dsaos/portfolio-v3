@@ -8,7 +8,7 @@ source "https://rubygems.org"
 #
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
-gem "jekyll", "3.5.2"
+gem "jekyll", "3.9.0"
 
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
 # uncomment the line below. To upgrade, run `bundle update github-pages`.
@@ -19,9 +19,7 @@ gem "rouge"
 # If you have any plugins, put them here!
 group :jekyll_plugins do
 	gem "jekyll-feed", "~> 0.6"
-	gem 'bootstrap', '~> 4.0.0.beta'
+	gem 'bootstrap', '~> 4.5.2'
 end
 
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
+gem "kramdown-parser-gfm", "~> 1.1"
