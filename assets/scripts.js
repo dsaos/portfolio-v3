@@ -160,6 +160,28 @@ fullscreenArea.classList.remove('animate-in')
 
 }
 
+// ——————————————————————————————————————————————————
+// slideshows
+// ——————————————————————————————————————————————————
+
+let slideshows = document.getElementsByClassName('slideshow')
+for (slideshow of slideshows) {
+  let imageMap = Array.from(slideshow.childNodes)
+  imageMap = imageMap.filter(element => element.tagName === 'IMG')
+
+  let currentSlide = 0
+
+  imageMap[0].classList.add('active')
+
+  setInterval(() => {
+    for (var i = 0; i < imageMap.length; i++) {
+      imageMap[i].classList.remove('active')
+    }
+    currentSlide = (currentSlide != imageMap.length - 1) ? currentSlide + 1 : 0
+    imageMap[currentSlide].classList.add('active')
+  }, 5000)
+}
+
 
 // ——————————————————————————————————————————————————
 // window.onload

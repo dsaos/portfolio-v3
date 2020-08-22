@@ -252,3 +252,22 @@ footer svg {
     fill:#425373;
   }
 }
+
+.slideshow {
+  display: inline-grid;
+  align-items: center;
+  width: 100%;
+
+  img {
+    grid-column: 1;
+    grid-row: 1;
+    margin: 0 auto;
+    max-height: 90vh;
+    opacity: 0;
+    transition: opacity .75s ease-in;
+
+    &.active {
+      opacity: 1;
+    }
+  }
+}
