@@ -86,19 +86,19 @@ function delay(interval) {
 //preload images
 function setPreload(el) {
     el.setAttribute('src', el.getAttribute('data-src'));
-	el.onload = function() {
-	    el.classList.remove('preloader');
-	}
+  el.onload = function() {
+      el.classList.remove('preloader');
+  }
 }
 
 
 function animateIn(element) {
-	//we don't want everything animating all at once, so delay based on the number animating
-	numAnimating++;
-	setTimeout(function(){
-  		element.classList.add('animate');
-  		numAnimating--;
-	},200*numAnimating);
+  //we don't want everything animating all at once, so delay based on the number animating
+  numAnimating++;
+  setTimeout(function(){
+      element.classList.add('animate');
+      numAnimating--;
+  },200*numAnimating);
 }
 
 
@@ -114,20 +114,20 @@ var numAnimating = 0;
 //slide elements need to be wrapped to work properly
 let slideEls = document.getElementsByClassName('slide-in')
 for (slideEl of slideEls) {
-	slideEl.innerHTML = "<span>" + slideEl.innerHTML + "</span>";	
+  slideEl.innerHTML = "<span>" + slideEl.innerHTML + "</span>";	
 }
 
 
 let fadeEls = document.querySelectorAll('.fade-up, .slide-in')
 for (fadeEl of fadeEls) {
-	let scene = new ScrollMagic.Scene({
-		triggerElement: fadeEl,
-		triggerHook:'onEnter'
-		})
-  	.addTo(controller)
-  	.on('enter', function(e) {
-  		animateIn(scene.triggerElement());
-  	})
+  let scene = new ScrollMagic.Scene({
+    triggerElement: fadeEl,
+    triggerHook:'onEnter'
+    })
+    .addTo(controller)
+    .on('enter', function(e) {
+      animateIn(scene.triggerElement());
+    })
 }
 
 
@@ -142,24 +142,23 @@ const fullscreenArea = document.getElementById('fullscreenArea')
 const fullscreenImage = document.getElementById('fullscreenImage')
 const fullscreenDescription = document.getElementById('fullscreenDescription')
 for (expandEl of expandEls) {
-	expandEl.onclick = function(e) {
-		if (this.getElementsByClassName('portfolio-image-fullonly')[0]) {
-			image = this.getElementsByClassName('portfolio-image-fullonly')[0].outerHTML		
-		} else {
-			image = this.getElementsByClassName('portfolio-image')[0].outerHTML		
-		}
-		fullscreenImage.innerHTML = image
-		let description = this.getElementsByClassName('portfolio-description')[0].innerHTML;
-		fullscreenDescription.innerHTML = description
-		fullscreenArea.classList.add('animate-in')
-	}
+  expandEl.onclick = function(e) {
+    if (this.getElementsByClassName('portfolio-image-fullonly')[0]) {
+      image = this.getElementsByClassName('portfolio-image-fullonly')[0].outerHTML		
+    } else {
+      image = this.getElementsByClassName('portfolio-image')[0].outerHTML		
+    }
+    fullscreenImage.innerHTML = image
+    let description = this.getElementsByClassName('portfolio-description')[0].innerHTML;
+    fullscreenDescription.innerHTML = description
+    fullscreenArea.classList.add('animate-in')
+  }
 }
 const closeButton = document.getElementById('closeButton')
 fullscreenArea.onclick = function(e) {
 fullscreenArea.classList.remove('animate-in')
 
 }
-
 
 
 // ——————————————————————————————————————————————————
@@ -171,15 +170,15 @@ fullscreenArea.classList.remove('animate-in')
 
 window.onload = function(event) {
 //handle preloaded images
-	let preloadEls = document.getElementsByClassName('lazyload-image')
-	for (preloadEl of preloadEls) {
-		let scene = new ScrollMagic.Scene({
-			triggerElement: preloadEl,
-			triggerHook:'onEnter'
-		})
-		.addTo(controller)
-		.on("enter", setPreload(preloadEl))
-	}
+  let preloadEls = document.getElementsByClassName('lazyload-image')
+  for (preloadEl of preloadEls) {
+    let scene = new ScrollMagic.Scene({
+      triggerElement: preloadEl,
+      triggerHook:'onEnter'
+    })
+    .addTo(controller)
+    .on("enter", setPreload(preloadEl))
+  }
 
 //handle scramble-ins
   delay(1000).then(function() {
