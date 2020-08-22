@@ -13,9 +13,4 @@ source "https://rubygems.org"
 # uncomment the line below. To upgrade, run `bundle update github-pages`.
 gem "github-pages", group: :jekyll_plugins
 
-# If you have any plugins, put them here!
-group :jekyll_plugins do
-	gem 'bootstrap', '~> 4.5.2'
-end
-
 gem "kramdown-parser-gfm", "~> 1.1"
