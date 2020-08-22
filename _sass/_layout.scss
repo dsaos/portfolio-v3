@@ -256,7 +256,6 @@ footer svg {
 .slideshow {
   display: inline-grid;
   align-items: center;
-  width: 100%;
 
   img {
     grid-column: 1;
@@ -268,6 +267,41 @@ footer svg {
 
     &.active {
       opacity: 1;
+    }
+  }
+}
+
+.browser-frame-window {
+  visibility: hidden;
+}
+
+.browser-frame {
+  display: inline-block;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2), 
+    0 2px 4px rgba(0,0,0,0.2), 
+    0 4px 8px rgba(0,0,0,0.2), 
+    0 8px 16px rgba(0,0,0,0.2),
+    0 16px 32px rgba(0,0,0,0.2), 
+    0 32px 64px rgba(0,0,0,0.2);
+  line-height: 0;
+
+
+  .browser-frame-window {
+    visibility: visible;
+    display: flex;
+    align-items: center;
+    height: 30px;
+    width: 100%;
+    background: linear-gradient(#eee, #ccc);
+    border-radius: 6px 6px 0 0;
+    border-bottom: 1px solid #aaa;
+    border-top: 1px solid #fff;
+
+    img {
+      padding-left: 10px;
+      height: 18px;
+      width: auto;
+      opacity: 0.5;
     }
   }
 }

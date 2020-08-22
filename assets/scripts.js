@@ -164,7 +164,7 @@ fullscreenArea.classList.remove('animate-in')
 // slideshows
 // ——————————————————————————————————————————————————
 
-let slideshows = document.getElementsByClassName('slideshow')
+const slideshows = document.getElementsByClassName('slideshow')
 for (slideshow of slideshows) {
   let imageMap = Array.from(slideshow.childNodes)
   imageMap = imageMap.filter(element => element.tagName === 'IMG')
@@ -180,6 +180,18 @@ for (slideshow of slideshows) {
     currentSlide = (currentSlide != imageMap.length - 1) ? currentSlide + 1 : 0
     imageMap[currentSlide].classList.add('active')
   }, 5000)
+}
+
+
+// ——————————————————————————————————————————————————
+// browser frame
+// ——————————————————————————————————————————————————
+
+let browserFrames = document.getElementsByClassName('browser-frame')
+const browserFrameButtons = document.querySelector('.browser-frame-window')
+
+for (frame of browserFrames) {
+  frame.prepend(browserFrameButtons.cloneNode(true))
 }
 
 

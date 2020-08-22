@@ -6,7 +6,7 @@ layout: default
   <h1 class="masthead-title scramble-in display-1">David Sprankle</h1>
   <h3 class="scramble-in subtitle">designer, developer, logician</h3>
 </header>
-<div class="container-fluid">
+<div id="intro" class="container-fluid">
   <div class="row  justify-content-evenly align-items-center sp-content py-2 py-md-3 py-xl-4 bg-gradient-pink">
     <div class="col-9 col-md-5 col-lg-4 mb-md-0 mb-2 text-center">
       {% include maze.html %}
@@ -17,6 +17,8 @@ layout: default
       <p class="fade-up mb-0 mt-1">With a decade of experience in both agency and in-house environments, and with a long-standing foundation in technical support, I've built a passion for functional art, beautiful code, and plain ol' common sense. Let me show you below. </p>
     </div>
   </div>
+</div>
+<div id="caseStudies" class="container-fluid">
   <div class="row flex-xl-nowrap bg-gradient-blue py-2 py-md-3 py-xl-4">
     <div class="col-12 col-md-12 col-xl-12 sp-content">
 
@@ -28,7 +30,7 @@ layout: default
               <h6 class="display-1 tagline slide-in mb-1">{{item.title}}</h6>
               <hr>
             </div>
-            <div class="mt-1 mb-0">
+            <div class="mt-1 mb-0 text-center">
               {{item.content}}
             </div>
           </article>
@@ -42,7 +44,9 @@ layout: default
               <p class="mt-1 mb-0">{{item.content}}</p>
             </aside>
             <div class="col-12 col-md-5 item-content fade-up mb-0">
-              <img class="img-fluid lazyload-image preloader"  alt="{{item.title}}" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="{{item.thumbnail }}">
+              <div class="browser-frame">
+                <img class="img-fluid lazyload-image preloader" alt="{{item.title}}" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="{{item.thumbnail }}">
+              </div>
             </div>
           </article>
         {% endif %}
@@ -50,7 +54,7 @@ layout: default
     </div>
   </div>
 </div>
-<div class="sp-content bg-gradient-dark" >
+<div id="gallery" class="sp-content bg-gradient-dark" >
   <aside class="py-2 py-md-3 py-xl-4 px-1 text-center">
     <h2 class="display-1 slide-in mb-1">Design Gallery</h2>
     <hr>
@@ -78,64 +82,64 @@ layout: default
     {% endfor %}
   </div>
 </div>
-<div class="container-fluid">
+<div id="skills" class="container-fluid">
   <div class="row flex-xl-nowrap justify-content-evenly py-2 py-md-3 py-xl-4 bg-gradient-green">
     <div class="col-12 col-md-5 fade-up mb-1 mb-md-0">
       <h2 class="display-1 slide-in mb-1">Skills, Experience &amp; Approach</h2>
       <hr>
       <p class="mt-1">My dedication to being concise applies to both written communications and web development. I believe in an accessible, simple approach that complies with all contemporary standards. At the same time, I love learning new things, and strive to use a new concept or technology in every project, provided it has wide support.</p>
-  </div>
-  <div class="col-12 col-md-4">
-    <ul class="skills-grid">
-      <li class="fade-up">HTML</li>
-      <li class="fade-up">CSS</li>
-      <li class="fade-up">Javascript/JSX</li>
-      <li class="fade-up">React.js</li>
-      <li class="fade-up">Git</li>
-      <li class="fade-up">ESLint</li>
-      <li class="fade-up">Storybook.js</li>
-      <li class="fade-up">Accessibiility</li>
-      <li class="fade-up">Internationalization</li>
-      <li class="fade-up">Markdown</li>
-      <li class="fade-up">Jekyll</li>
-      <li class="fade-up">Gatsby</li>
-      <li class="fade-up">Sketch</li>
-      <li class="fade-up">Figma</li>
-      <li class="fade-up">Adobe CC</li>
-      <li class="fade-up">PHP</li>
-      <li class="fade-up">C#</li>
-      <li class="fade-up">Unix/CLI</li>
-      <li class="fade-up">WordPress</li>
-      <li class="fade-up">Drupal</li>
-      <li class="fade-up">Joomla</li>
-      <li class="fade-up">SharePoint</li>
-      <li class="fade-up">jQuery</li>
-      <li class="fade-up">Sass</li>
-      <li class="fade-up">Less</li>
-      <li class="fade-up">node.js</li>
-      <li class="fade-up">Ruby</li>
-      <li class="fade-up">Google Analytics</li>
-      <li class="fade-up">Chartbeat</li>
-      <li class="fade-up">Quantcast</li>
-      <li class="fade-up">Facebook</li>
-      <li class="fade-up">Slack</li>
-      <li class="fade-up">Microsoft Office</li>
-      <li class="fade-up">Framer</li>
-      <li class="fade-up">InVision</li>
-      <li class="fade-up">Google Suite</li>
-      <li class="fade-up">Audition</li>
-      <li class="fade-up">Final Cut Pro</li>
-      <li class="fade-up">Logic Pro</li>
-      <li class="fade-up">Aperture</li>
-      <li class="fade-up">Mainstage</li>
-      <li class="fade-up">VS Code</li>
-      <li class="fade-up">Unity</li>
-      <li class="fade-up">Unreal Engine</li>
-      <li class="fade-up">Blender</li>
-    </ul>
+    </div>
+    <div class="col-12 col-md-4">
+      <ul class="skills-grid">
+        <li class="fade-up">HTML</li>
+        <li class="fade-up">CSS</li>
+        <li class="fade-up">Javascript/JSX</li>
+        <li class="fade-up">React.js</li>
+        <li class="fade-up">Git</li>
+        <li class="fade-up">ESLint</li>
+        <li class="fade-up">Storybook.js</li>
+        <li class="fade-up">Accessibiility</li>
+        <li class="fade-up">Internationalization</li>
+        <li class="fade-up">Markdown</li>
+        <li class="fade-up">Jekyll</li>
+        <li class="fade-up">Gatsby</li>
+        <li class="fade-up">Sketch</li>
+        <li class="fade-up">Figma</li>
+        <li class="fade-up">Adobe CC</li>
+        <li class="fade-up">PHP</li>
+        <li class="fade-up">C#</li>
+        <li class="fade-up">Unix/CLI</li>
+        <li class="fade-up">WordPress</li>
+        <li class="fade-up">Drupal</li>
+        <li class="fade-up">Joomla</li>
+        <li class="fade-up">SharePoint</li>
+        <li class="fade-up">jQuery</li>
+        <li class="fade-up">Sass</li>
+        <li class="fade-up">Less</li>
+        <li class="fade-up">node.js</li>
+        <li class="fade-up">Ruby</li>
+        <li class="fade-up">Google Analytics</li>
+        <li class="fade-up">Chartbeat</li>
+        <li class="fade-up">Quantcast</li>
+        <li class="fade-up">Facebook</li>
+        <li class="fade-up">Slack</li>
+        <li class="fade-up">Microsoft Office</li>
+        <li class="fade-up">Framer</li>
+        <li class="fade-up">InVision</li>
+        <li class="fade-up">Google Suite</li>
+        <li class="fade-up">Audition</li>
+        <li class="fade-up">Final Cut Pro</li>
+        <li class="fade-up">Logic Pro</li>
+        <li class="fade-up">Aperture</li>
+        <li class="fade-up">Mainstage</li>
+        <li class="fade-up">VS Code</li>
+        <li class="fade-up">Unity</li>
+        <li class="fade-up">Unreal Engine</li>
+        <li class="fade-up">Blender</li>
+      </ul>
+    </div>
   </div>
 </div>
-
 
 
 <div class="work-fullscreen" id="fullscreenArea">
